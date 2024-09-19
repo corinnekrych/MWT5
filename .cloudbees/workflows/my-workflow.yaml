@@ -2,11 +2,6 @@ apiVersion: automation.cloudbees.io/v1alpha1
 kind: workflow
 name: My workflow
 on:
-  push:
-    branches:
-      - "**"
-  schedule:
-    - cron: "*/5 * * * *"
   workflow_dispatch:
     inputs:
       num:
@@ -19,3 +14,16 @@ jobs:
         shell: sh
         run: |
           echo "hello world"
+  approvalJob:
+    delegates: cloudbees-io/manual-approval/custom-job.yml@v1
+    with:
+      approvers: []
+      instruction: ""
+      disallowLaunchByUser: false
+    needs: build
+  approval2:
+    delegates: cloudbees-io/manual-approval/custom-job.yml@v1
+    with:
+      approvers: ckrych@cloudbees.com
+      instruction: do sth
+      disallowLaunchByUser: false
