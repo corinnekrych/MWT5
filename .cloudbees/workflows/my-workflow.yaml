@@ -6,6 +6,8 @@ on:
     inputs:
       num:
         type: number
+  schedule:
+    - cron: "* * * * *"
 jobs:
   build:
     steps:
