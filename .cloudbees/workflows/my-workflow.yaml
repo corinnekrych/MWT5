@@ -4,8 +4,27 @@ name: My workflow
 on:
   workflow_dispatch:
     inputs:
-      num:
+      Name:
+        type: string
+        required: true
+        description: Description 1
+      Version:
         type: number
+        required: true
+        description: Description 2
+      Release_type:
+        type: choice
+        options:
+          - Standard
+          - Hotfix
+        default: Standard
+        required: true
+        description: Description 4
+      Smart_deploy:
+        type: boolean
+        default: true
+        required: true
+        description: Description 3
   schedule:
     - cron: "* * * * *"
 jobs:
@@ -16,16 +35,4 @@ jobs:
         shell: sh
         run: |
           echo "hello world"
-  approvalJob:
-    delegates: cloudbees-io/manual-approval/custom-job.yml@v1
-    with:
-      approvers: []
-      instruction: ""
-      disallowLaunchByUser: false
-    needs: build
-  approval2:
-    delegates: cloudbees-io/manual-approval/custom-job.yml@v1
-    with:
-      approvers: ckrych@cloudbees.com
-      instruction: do sth
-      disallowLaunchByUser: false
+
