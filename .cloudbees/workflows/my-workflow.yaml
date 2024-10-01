@@ -25,8 +25,6 @@ on:
         default: true
         required: true
         description: Description 3
-  schedule:
-    - cron: "* * * * *"
 jobs:
   build:
     steps:
@@ -35,4 +33,11 @@ jobs:
         shell: sh
         run: |
           echo "hello world"
-
+    needs:
+      - corinne
+  corinne:
+    delegates: cloudbees-io/manual-approval/custom-job.yml@v1
+    with:
+      approvers:
+        - 015d04e8-5bcb-11eb-93be-42010a83aee8
+      instruction: some
