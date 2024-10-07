@@ -33,3 +33,10 @@ jobs:
         shell: sh
         run: |
           echo "hello world"
+    needs:
+      - e
+  e:
+    delegates: cloudbees-io/manual-approval/custom-job.yml@v1
+    with:
+      approvers: 0759374b-5a67-4695-6187-11b1d9be3888,  14c7d091-86c8-4d3c-489e-118ad3590bb3
+      instruction: ""
