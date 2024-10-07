@@ -38,5 +38,5 @@ jobs:
   e:
     delegates: cloudbees-io/manual-approval/custom-job.yml@v1
     with:
-      approvers: 0759374b-5a67-4695-6187-11b1d9be3888,  14c7d091-86c8-4d3c-489e-118ad3590bb3
+      approvers: [134e12a8-7104-11ef-a940-42010a83ae47, 4395ef04-68b7-11ee-bec3-42010a83ae76]
       instruction: ""
