@@ -38,6 +38,6 @@ jobs:
   e:
     delegates: cloudbees-io/manual-approval/custom-job.yml@v1
     with:
-      approvers: 76bb48b2-a920-11ee-bb83-42010a83ae92,015d04e8-5bcb-11eb-93be-42010a83aee8,85ff1b0c-1ae1-11ec-af3a-42010a83aecb,fd587892-cacd-11eb-9ec3-42010a83ae11,e3d34af6-efa2-11eb-9d3b-42010a83ae11,8c38c97a-87ec-11ef-9f27-42010a83ae47
+      approvers: 015d04e8-5bcb-11eb-93be-42010a83aee8,8c38c97a-87ec-11ef-9f27-42010a83ae47,ff9892d6-0900-11ee-94c8-42010a83ae08
       disallowLaunchByUser: false
       instruction: ""
