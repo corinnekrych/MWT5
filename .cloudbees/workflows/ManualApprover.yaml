@@ -17,5 +17,5 @@ jobs:
     delegates: cloudbees-io/manual-approval/custom-job.yml@v1
     with:
       approvers: 8c38c97a-87ec-11ef-9f27-42010a83ae47,015d04e8-5bcb-11eb-93be-42010a83aee8
-      disallowLaunchByUser: true
+      disallowLaunchByUser: false
       instruction: ddddd
