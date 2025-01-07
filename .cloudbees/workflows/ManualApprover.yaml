@@ -3,6 +3,13 @@ kind: workflow
 name: My workflow
 on:
   workflow_dispatch:
+    inputs:
+      cxcxcx:
+        type: string
+  workflow_call:
+    inputs:
+      d1:
+        type: number
 jobs:
   build:
     steps:
@@ -12,10 +19,26 @@ jobs:
         run: |
           echo "hello world"
     needs:
-      - corinne
-  corinne:
+      - sss
+  approvalJob:
     delegates: cloudbees-io/manual-approval/custom-job.yml@v1
     with:
       approvers: 8c38c97a-87ec-11ef-9f27-42010a83ae47,015d04e8-5bcb-11eb-93be-42010a83aee8, 5ea63edb-9b14-4f19-b423-7ae7bd92de9b
       disallowLaunchByUser: false
       instructions: ddddd
+
+  sss:
+    needs: corinne
+    environment: ""
+    steps:
+      - name: ewew
+        uses: cloudbees-io/s3-upload-object@v1
+        run: ""
+        with:
+          bucket-name: ssss
+          file-path: s
+          s3-path: s
+        shell: ""
+        kind: build
+    outputs:
+      ee: "2"
