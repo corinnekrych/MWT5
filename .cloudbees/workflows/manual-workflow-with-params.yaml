@@ -7,7 +7,6 @@ on:
       stringParam:
         type: string
         default: defaultValueStringParam
-        required: true
       choiceParam:
         type: choice
         options:
