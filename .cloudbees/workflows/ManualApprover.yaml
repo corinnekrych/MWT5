@@ -26,7 +26,6 @@ jobs:
       approvalInputs: |
         stringParamApproval:
           type: string
-          default: stringParamApprovalDefaultValue
           required: true
     timeout-minutes: 4320
     delegates: cloudbees-io/manual-approval/custom-job.yml@v1
