@@ -3,6 +3,11 @@ kind: workflow
 name: My workflow
 on:
   workflow_dispatch:
+    inputs:
+      boo:
+        type: boolean
+        default: true
+        required: true
 jobs:
   build:
     steps:
@@ -14,8 +19,13 @@ jobs:
     needs:
       - corinne
   corinne:
-    delegates: cloudbees-io/manual-approval/custom-job.yml@v1
     with:
       approvers: 8c38c97a-87ec-11ef-9f27-42010a83ae47,015d04e8-5bcb-11eb-93be-42010a83aee8
       disallowLaunchByUser: false
-      instruction: ddddd
+      instructions: ""
+      approvalInputs: |
+        boolParam:
+          type: boolean
+          default: false
+    timeout-minutes: 4320
+    delegates: cloudbees-io/manual-approval/custom-job.yml@v1
