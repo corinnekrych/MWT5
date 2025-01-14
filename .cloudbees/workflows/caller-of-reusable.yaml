@@ -9,3 +9,5 @@ jobs:
     uses: corinnekrych/MWT5/.cloudbees/workflows/ReusableWorkflow.yaml
     with:
       stringParamCallable: "some"
+    # outputs: 
+    #   rrrr: rrr
