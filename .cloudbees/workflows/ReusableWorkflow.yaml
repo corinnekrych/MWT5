@@ -18,5 +18,5 @@ jobs:
         run: |
           echo "stringParamCallable: ${{ inputs.stringParamCallable}}"
     outputs:
-      reusableOutput1: reusableOutput1Value
-      reusableOutput2: reusableOutput2Value
+      reusableOutput1: ${{ inputs.stringParamCallable}}
+      reusableOutput2: ${{ inputs.stringParamCallable}}
