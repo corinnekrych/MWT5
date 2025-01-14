@@ -4,8 +4,10 @@ name: My workflow
 on:
   workflow_dispatch:
     inputs:
-      cxcxcx:
+      stringParamTrigger:
         type: string
+        default: stringParamTriggerDefaultValue
+        required: true
 jobs:
   build:
     steps:
@@ -16,10 +18,15 @@ jobs:
           echo "hello world"
     needs: approvalJob
   approvalJob:
-    timeout-minutes: 4320
-    delegates: cloudbees-io/manual-approval/custom-job.yml@v1
     with:
       approvers: ""
       disallowLaunchByUser: false
       notifyAllEligibleUsers: false
       instructions: ddddd
+      approvalInputs: |
+        stringParamApproval:
+          type: string
+          default: stringParamApprovalDefaultValue
+          required: true
+    timeout-minutes: 4320
+    delegates: cloudbees-io/manual-approval/custom-job.yml@v1
