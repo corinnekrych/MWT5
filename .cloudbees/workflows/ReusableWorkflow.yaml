@@ -9,7 +9,6 @@ on:
         type: string
         default: stringParamCallableDefaultValue
         required: true
- 
 jobs:
   build:
     steps:
@@ -19,4 +18,5 @@ jobs:
         run: |
           echo "stringParamCallable: ${{ inputs.stringParamCallable}}"
     outputs:
-      r: rere
+      reusableOutput1: reusableOutput1Value
+      reusableOutput2: reusableOutput2Value
